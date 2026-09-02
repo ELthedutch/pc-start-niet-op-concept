@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Concept 2.0 - PC start niet op | PC Reparatie Twente</title>
+    <meta
+      name="description"
+      content="Concept 2.0 voor een overzichtelijke supportpagina over een pc die niet opstart."
+    />
+    <style>
+      :root {
+        --green: #007a68;
+        --green-dark: #075246;
+        --green-pale: #dff0ea;
+        --yellow: #f4b42e;
+        --line: #e5e5e7;
+        --danger: #a7352c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: #f5f5f7;
+        color: #1d1d1f;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      p,
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 850px;
+        font-size: clamp(44px, 7vw, 78px);
+        line-height: 1.02;
+      }
+
+      h2 {
+        font-size: clamp(27px, 3.2vw, 42px);
+        line-height: 1.12;
+      }
+
+      h3 {
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .support-header {
+        background: rgba(255, 255, 255, 0.94);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .support-meta,
+      .support-nav,
+      .support-hero,
+      .topic-picker,
+      .popular-band,
+      .detail-stack,
+      .help-section,
+      .concept-section {
+        width: min(1120px, calc(100% - 36px));
+        margin: 0 auto;
+      }
+
+      .support-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 10px 0;
+        color: #6e6e73;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .support-meta a {
+        color: var(--green);
+      }
+
+      .support-nav {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 24px;
+        align-items: center;
+        padding: 16px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-weight: 900;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--green);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+        color: #6e6e73;
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      .nav-button,
+      .button,
+      .dialog-actions a,
+      .dialog-actions button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 999px;
+        padding: 11px 17px;
+        font: inherit;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .nav-button,
+      .button-secondary,
+      .dialog-actions a,
+      .answer-panel > a {
+        background: var(--green);
+        color: #fff;
+      }
+
+      .button-primary {
+        background: var(--yellow);
+        color: #1d2618;
+      }
+
+      .button-muted,
+      .dialog-actions button {
+        background: #f5f5f7;
+        color: #1d1d1f;
+      }
+
+      .support-hero {
+        display: grid;
+        justify-items: center;
+        padding: 70px 0 38px;
+        text-align: center;
+      }
+
+      .label {
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .support-hero h1 {
+        margin-top: 10px;
+      }
+
+      .support-hero > p:not(.label) {
+        max-width: 720px;
+        margin-top: 16px;
+        color: #6e6e73;
+        font-size: clamp(18px, 2vw, 23px);
+        line-height: 1.5;
+      }
+
+      .search-card {
+        width: min(760px, 100%);
+        margin-top: 32px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fff;
+        padding: 12px;
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08);
+      }
+
+      .search-card label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+      }
+
+      .search-card div {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+      }
+
+      .search-card input {
+        min-width: 0;
+        border: 0;
+        border-radius: 12px;
+        background: #f5f5f7;
+        padding: 16px 18px;
+        color: #1d1d1f;
+        font-size: 16px;
+      }
+
+      .search-card input:focus {
+        outline: 2px solid var(--green);
+      }
+
+      .search-card button {
+        border: 0;
+        border-radius: 12px;
+        background: #1d1d1f;
+        color: #fff;
+        padding: 0 22px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .topic-picker {
+        padding: 28px 0 42px;
+      }
+
+      .section-head {
+        max-width: 760px;
+      }
+
+      .centered {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+      }
+
+      .section-head h2 {
+        margin-top: 8px;
+      }
+
+      .section-head > p:not(.label) {
+        margin-top: 12px;
+        color: #6e6e73;
+        line-height: 1.65;
+      }
+
+      .topic-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .topic-card-wrap {
+        position: relative;
+      }
+
+      .topic-card {
+        display: grid;
+        min-height: 214px;
+        align-content: start;
+        justify-items: center;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fff;
+        padding: 26px 20px;
+        text-align: center;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .topic-card:hover,
+      .topic-card:focus-visible {
+        box-shadow: 0 18px 40px rgba(0, 122, 104, 0.15);
+        transform: translateY(-3px);
+        outline: none;
+      }
+
+      .topic-card span {
+        display: grid;
+        width: 58px;
+        height: 58px;
+        margin-bottom: 18px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--green-pale);
+        color: var(--green-dark);
+        font-weight: 900;
+      }
+
+      .topic-card strong {
+        color: #1d1d1f;
+        font-size: 20px;
+      }
+
+      .topic-card small {
+        margin-top: 10px;
+        color: #6e6e73;
+        font-size: 15px;
+        line-height: 1.45;
+      }
+
+      .info-button {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border: 1px solid #d8d8dc;
+        border-radius: 50%;
+        background: #fff;
+        color: var(--green-dark);
+        font: inherit;
+        font-size: 16px;
+        font-weight: 900;
+        cursor: pointer;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+      }
+
+      .info-button:hover,
+      .info-button:focus-visible {
+        border-color: var(--green);
+        background: var(--green-pale);
+        outline: none;
+      }
+
+      .popular-band {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 28px;
+        align-items: start;
+        padding: 36px 0;
+      }
+
+      .popular-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .popular-list a {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        padding: 15px 16px;
+        color: var(--green-dark);
+        font-weight: 800;
+      }
+
+      .detail-stack {
+        display: grid;
+        gap: 18px;
+        padding: 20px 0 52px;
+      }
+
+      .support-detail {
+        scroll-margin-top: 20px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fff;
+        padding: clamp(22px, 4vw, 36px);
+      }
+
+      .detail-title {
+        max-width: 780px;
+      }
+
+      .detail-kicker {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .detail-kicker .info-button {
+        position: static;
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+      }
+
+      .detail-title h2 {
+        margin-top: 8px;
+      }
+
+      .detail-title p:not(.label) {
+        margin-top: 10px;
+        color: #6e6e73;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 330px;
+        gap: 22px;
+        margin-top: 24px;
+      }
+
+      .steps-panel,
+      .answer-panel {
+        border-radius: 14px;
+        background: #f5f5f7;
+        padding: 22px;
+      }
+
+      .steps-panel ol {
+        display: grid;
+        gap: 12px;
+        margin: 16px 0 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: supportstep;
+      }
+
+      .steps-panel li {
+        position: relative;
+        min-height: 52px;
+        border-radius: 12px;
+        background: #fff;
+        padding: 14px 14px 14px 50px;
+        color: #515154;
+        line-height: 1.45;
+        counter-increment: supportstep;
+      }
+
+      .steps-panel li::before {
+        content: counter(supportstep);
+        position: absolute;
+        top: 13px;
+        left: 14px;
+        display: grid;
+        width: 25px;
+        height: 25px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--yellow);
+        color: #1d1d1f;
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .answer-panel {
+        display: grid;
+        gap: 14px;
+        align-content: start;
+      }
+
+      .answer-panel p {
+        margin-top: 7px;
+        color: #515154;
+        line-height: 1.55;
+      }
+
+      .warning-box {
+        border-left: 4px solid var(--danger);
+        border-radius: 10px;
+        background: #fff;
+        padding: 14px;
+      }
+
+      .warning-box h3,
+      .warning-box p {
+        color: var(--danger);
+      }
+
+      .answer-panel > a {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 11px 16px;
+        font-weight: 900;
+      }
+
+      .help-section {
+        border-radius: 24px;
+        background: #fff;
+        padding: clamp(28px, 5vw, 50px);
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .service-card {
+        min-height: 150px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #fbfbfd;
+        padding: 20px;
+      }
+
+      .service-card p {
+        margin-top: 9px;
+        color: #6e6e73;
+        line-height: 1.55;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .concept-section {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 24px;
+        padding: 46px 0 72px;
+      }
+
+      .concept-section ul {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .concept-section li {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        padding: 15px 16px;
+        color: #515154;
+        line-height: 1.5;
+      }
+
+      .info-dialog {
+        width: min(760px, calc(100% - 28px));
+        max-height: min(760px, calc(100dvh - 28px));
+        border: 0;
+        border-radius: 22px;
+        padding: 0;
+        background: transparent;
+        color: #1d1d1f;
+      }
+
+      .info-dialog::backdrop {
+        background: rgba(18, 27, 24, 0.48);
+        backdrop-filter: blur(6px);
+      }
+
+      .dialog-shell {
+        display: grid;
+        gap: 18px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: #fff;
+        padding: clamp(22px, 4vw, 34px);
+        box-shadow: 0 26px 70px rgba(0, 0, 0, 0.22);
+      }
+
+      .dialog-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .dialog-close {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border: 0;
+        border-radius: 50%;
+        background: #f5f5f7;
+        color: #515154;
+        font: inherit;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .dialog-summary,
+      .dialog-shell > p {
+        color: #515154;
+        font-size: 17px;
+        line-height: 1.65;
+      }
+
+      .dialog-summary {
+        margin-top: -8px;
+        font-weight: 800;
+      }
+
+      .dialog-columns {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 280px;
+        gap: 16px;
+      }
+
+      .dialog-columns section {
+        border-radius: 16px;
+        background: #f5f5f7;
+        padding: 18px;
+      }
+
+      .dialog-columns ul {
+        display: grid;
+        gap: 10px;
+        margin: 13px 0 0;
+        padding-left: 18px;
+        color: #515154;
+        line-height: 1.55;
+      }
+
+      .dialog-note {
+        display: grid;
+        gap: 10px;
+        align-content: start;
+      }
+
+      .dialog-note p {
+        color: #515154;
+        line-height: 1.55;
+      }
+
+      .dialog-note h3:nth-of-type(2),
+      .dialog-note h3:nth-of-type(2) + p {
+        color: var(--danger);
+      }
+
+      .dialog-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      @media (max-width: 900px) {
+        .support-nav,
+        .popular-band,
+        .detail-grid,
+        .concept-section,
+        .dialog-columns {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+          flex-wrap: wrap;
+        }
+
+        .topic-grid,
+        .service-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 620px) {
+        .support-meta,
+        .nav-links,
+        .cta-row {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .support-hero {
+          padding-top: 42px;
+        }
+
+        .support-hero h1 {
+          font-size: 42px;
+        }
+
+        .search-card div,
+        .topic-grid,
+        .popular-list,
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .search-card button,
+        .nav-button,
+        .cta-row .button,
+        .dialog-actions a,
+        .dialog-actions button {
+          min-height: 48px;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="support-header">
+        <div class="support-meta">
+          <span>Concept 2.0</span>
+          <span>GitHub Pages demo</span>
+        </div>
+        <nav class="support-nav" aria-label="Hoofdnavigatie">
+          <a class="brand" href="./">
+            <span class="brand-mark">PRT</span>
+            <span>PC Reparatie Twente</span>
+          </a>
+          <div class="nav-links">
+            <a href="#onderwerpen">Onderwerpen</a>
+            <a href="#populair">Populair</a>
+            <a href="#hulp">Hulp krijgen</a>
+          </div>
+          <a class="nav-button" href="tel:+31747850071">Bel direct</a>
+        </nav>
+      </header>
+
+      <section class="support-hero">
+        <p class="label">PC start niet op</p>
+        <h1>Waarmee kunnen we u helpen?</h1>
+        <p>
+          Kies wat u ziet of hoort. De pagina toont meteen de juiste controles,
+          waarschuwingen en de snelste route naar gratis diagnose.
+        </p>
+        <form class="search-card" action="#onderwerpen">
+          <label for="support-search">Zoek in deze gids</label>
+          <div>
+            <input
+              id="support-search"
+              name="q"
+              placeholder="Bijvoorbeeld: zwart scherm, piepjes, Windows start niet"
+              type="search"
+            />
+            <button type="submit">Zoeken</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="topic-picker" id="onderwerpen">
+        <div class="section-head centered">
+          <p class="label">Kies een onderwerp</p>
+          <h2>Wat gebeurt er bij het opstarten?</h2>
+        </div>
+        <div class="topic-grid" id="topic-grid"></div>
+      </section>
+
+      <section class="popular-band" id="populair">
+        <div class="section-head">
+          <p class="label">Populaire vragen</p>
+          <h2>Snel naar veelvoorkomende situaties</h2>
+        </div>
+        <div class="popular-list">
+          <a href="#onderwerpen">Pc start niet op na stroomuitval</a>
+          <a href="#onderwerpen">Computer blijft hangen op Windows-logo</a>
+          <a href="#onderwerpen">Zwart scherm maar ventilatoren draaien</a>
+          <a href="#onderwerpen">Harde schijf tikt of klikt</a>
+          <a href="#onderwerpen">Pc piept bij opstarten</a>
+          <a href="#onderwerpen">Windows automatische reparatie blijft terugkomen</a>
+        </div>
+      </section>
+
+      <section class="detail-stack" id="detail-stack"></section>
+
+      <section class="help-section" id="hulp">
+        <div class="section-head centered">
+          <p class="label">Hulp krijgen</p>
+          <h2>Direct duidelijkheid zonder eindeloos zoeken</h2>
+          <p>
+            Deze GitHub Pages demo is bedoeld om via WhatsApp te delen als
+            klikbaar concept. De eigenaar kan rustig zien hoe klanten sneller
+            bij de juiste informatie komen.
+          </p>
+        </div>
+        <div class="service-grid">
+          <div class="service-card">
+            <h3>Gratis diagnose</h3>
+            <p>Neem de pc mee naar de winkel. U hoort vooraf wat er mis is en wat reparatie kost.</p>
+          </div>
+          <div class="service-card">
+            <h3>Zonder afspraak</h3>
+            <p>Loop binnen aan de Wemenstraat 26 in Hengelo tijdens openingstijden.</p>
+          </div>
+          <div class="service-card">
+            <h3>Haal- en brengservice</h3>
+            <p>Geen tijd of vervoer? Vraag naar gratis ophalen en terugbrengen in Twente.</p>
+          </div>
+        </div>
+        <div class="cta-row">
+          <a class="button button-primary" href="tel:+31747850071">Bel 074 785 00 71</a>
+          <a class="button button-secondary" href="https://wa.me/31683656077">WhatsApp</a>
+          <a class="button button-muted" href="https://www.pcreparatietwente.nl/contact/">Contactpagina</a>
+        </div>
+      </section>
+
+      <section class="concept-section">
+        <div>
+          <p class="label">Voor presentatie</p>
+          <h2>Waarom dit concept overzichtelijker voelt</h2>
+        </div>
+        <ul>
+          <li>Het lijkt op een support-hub: eerst zoeken of kiezen, daarna pas lezen.</li>
+          <li>De info-knoppen geven diepgang zonder de hoofdpagina druk te maken.</li>
+          <li>Bezoekers met haast krijgen direct duidelijke acties en waarschuwingen.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      const topics = [
+        {
+          id: "stroom",
+          label: "Geen stroom",
+          title: "Pc reageert helemaal niet",
+          summary: "Geen lampjes, geen geluid en geen ventilator.",
+          steps: [
+            "Sluit de pc rechtstreeks aan op een werkend stopcontact.",
+            "Controleer of de stroomkabel stevig in de pc en in het stopcontact zit.",
+            "Haal de kabel 30 seconden los en druk ondertussen de aan/uit-knop ingedrukt.",
+            "Start opnieuw met alleen monitor, muis en toetsenbord aangesloten."
+          ],
+          causes: "Voeding, stroomkabel, stekkerdoos, aan/uit-knop of moederbord.",
+          warning: "Brandlucht, vonken of knetterend geluid? Niet opnieuw aansluiten.",
+          explanation: "Als een pc helemaal niets doet, komt er vaak geen stabiele stroom bij het systeem binnen. Dat kan buiten de pc zitten, maar ook intern bij de voeding of het moederbord.",
+          checks: [
+            "Brandt er een lampje op het moederbord of bij de netwerkkabel?",
+            "Werkt dezelfde stroomkabel op een ander apparaat?",
+            "Voelt de aan/uit-knop los, zwaar of blijft hij hangen?",
+            "Is er kort geleden onweer, stroomuitval of verhuizing geweest?"
+          ],
+          note: "Voor de reparateur is vooral nuttig om te weten of de pc ineens uitviel of al langer moeilijk startte."
+        },
+        {
+          id: "beeld",
+          label: "Zwart scherm",
+          title: "Pc gaat aan maar geeft geen beeld",
+          summary: "Ventilatoren draaien, maar het scherm blijft zwart.",
+          steps: [
+            "Controleer of de monitor op de juiste ingang staat.",
+            "Test een andere HDMI- of DisplayPort-kabel.",
+            "Sluit de kabel bij een game-pc aan op de videokaart, niet op het moederbord.",
+            "Druk op CapsLock om te zien of de pc nog reageert."
+          ],
+          causes: "Monitor, kabel, videokaart, werkgeheugen, BIOS of moederbord.",
+          warning: "Na een BIOS-update of stroomuitval liever niet blijven proberen.",
+          explanation: "Een zwart scherm betekent niet altijd dat de computer niet start. Soms draait Windows wel, maar komt het beeldsignaal niet goed door.",
+          checks: [
+            "Verschijnt het menu van de monitor zelf wel?",
+            "Zit de kabel in de juiste aansluiting?",
+            "Gaan toetsenbordlampjes aan bij NumLock of CapsLock?",
+            "Is er recent een nieuwe videokaart, kabel of monitor aangesloten?"
+          ],
+          note: "Een foto van de achterkant van de pc helpt vaak om snel te zien of de kabel op de juiste poort zit."
+        },
+        {
+          id: "windows",
+          label: "Windows probleem",
+          title: "Windows start niet door",
+          summary: "Logo blijft hangen, blauw scherm of automatische reparatie.",
+          steps: [
+            "Koppel USB-sticks, externe schijven en printers los.",
+            "Laat automatische reparatie een keer volledig afronden.",
+            "Probeer veilige modus als Windows telkens opnieuw start.",
+            "Kies geen fabrieksherstel wanneer er belangrijke bestanden op staan."
+          ],
+          causes: "Mislukte update, beschadigde Windows-bestanden, virus of defecte SSD/HDD.",
+          warning: "Klikkende of tikkende schijf? Direct uitzetten voor dataherstel.",
+          explanation: "Wanneer Windows niet verder start, werkt de basis van de computer vaak nog wel. Het probleem zit dan meestal in Windows zelf, de schijf of een update.",
+          checks: [
+            "Welke melding staat er letterlijk op het scherm?",
+            "Komt u in automatische reparatie of veilige modus?",
+            "Is Windows kort geleden geupdate?",
+            "Staan er bestanden op de pc waarvan geen back-up bestaat?"
+          ],
+          note: "Bij belangrijke data is opnieuw installeren pas stap twee. Eerst veiligstellen, daarna herstellen."
+        },
+        {
+          id: "geluid",
+          label: "Piepjes",
+          title: "Pc piept tijdens opstarten",
+          summary: "Korte of lange pieptonen geven een hardwarefout aan.",
+          steps: [
+            "Tel hoeveel piepjes u hoort en of ze lang of kort zijn.",
+            "Maak een korte video met geluid als bewijs voor diagnose.",
+            "Schakel de pc uit en start niet eindeloos opnieuw op.",
+            "Verwijder geen onderdelen als u niet zeker weet wat u doet."
+          ],
+          causes: "Werkgeheugen, videokaart, processor, voeding of moederbord.",
+          warning: "Piepjes zijn foutcodes. Noteer ze voordat u hulp vraagt.",
+          explanation: "Pieptonen komen meestal van het moederbord. Het aantal en patroon vertellen welk onderdeel mogelijk niet goed wordt herkend.",
+          checks: [
+            "Hoeveel piepjes hoort u achter elkaar?",
+            "Zijn het korte piepjes, lange piepjes of een combinatie?",
+            "Blijft de pc daarna aan of schakelt hij uit?",
+            "Is de pc recent schoongemaakt, gevallen of verplaatst?"
+          ],
+          note: "Een korte video met geluid kan de diagnose versnellen, vooral als de piepcode merkafhankelijk is."
+        },
+        {
+          id: "uitval",
+          label: "Valt uit",
+          title: "Pc schakelt zichzelf weer uit",
+          summary: "De pc start kort en valt daarna weer uit.",
+          steps: [
+            "Laat de computer eerst volledig afkoelen.",
+            "Controleer of ventilatoren draaien en luchtopeningen vrij zijn.",
+            "Verwijder stof alleen voorzichtig aan de buitenkant.",
+            "Blijf geen herstartlus forceren."
+          ],
+          causes: "Oververhitting, stof, koelpasta, defecte koeler, voeding of kortsluiting.",
+          warning: "Na vocht, hitte of brandlucht altijd direct stoppen.",
+          explanation: "Een pc die zichzelf direct uitschakelt, doet dat vaak om schade te voorkomen. Het systeem merkt bijvoorbeeld hitte, instabiele voeding of kortsluiting.",
+          checks: [
+            "Draaien de ventilatoren direct bij het indrukken van de knop?",
+            "Zit er veel stof bij luchtopeningen of koelers?",
+            "Valt de pc sneller uit bij zware taken of al meteen bij starten?",
+            "Is er vocht, een val of een harde klap geweest?"
+          ],
+          note: "Als de pc steeds maar een paar seconden aangaat, is blijven proberen meestal tijdverlies en soms schadelijk."
+        },
+        {
+          id: "data",
+          label: "Bestanden veilig",
+          title: "Belangrijke bestanden op de pc",
+          summary: "Voorkom dat herstelacties foto's of documenten overschrijven.",
+          steps: [
+            "Maak geen fabrieksherstel zonder back-up.",
+            "Installeer Windows niet opnieuw over de bestaande schijf.",
+            "Laat de schijf controleren als de pc traag, tikkend of klikkerig klinkt.",
+            "Vraag eerst om data veilig te stellen voordat reparatie begint."
+          ],
+          causes: "SSD/HDD-probleem, beschadigd bestandssysteem of verkeerde herstelkeuze.",
+          warning: "Data eerst veiligstellen, daarna pas repareren.",
+          explanation: "Bij een niet-startende pc is de verleiding groot om Windows-herstel te kiezen. Zonder back-up kan dit juist bestanden moeilijker terug te halen maken.",
+          checks: [
+            "Welke bestanden zijn belangrijk: foto's, administratie, werk of school?",
+            "Is er een recente back-up op externe schijf of cloud?",
+            "Maakt de schijf klikgeluiden of duurt alles extreem lang?",
+            "Heeft iemand al geprobeerd Windows opnieuw te installeren?"
+          ],
+          note: "Voor klanten is deze keuze belangrijk: eerst data veilig, daarna pas snelheid of Windows herstellen."
+        }
+      ];
+
+      function escapeHtml(value) {
+        return value.replace(/[&<>"']/g, (char) => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;"
+        })[char]);
+      }
+
+      function topicCard(topic) {
+        return `
+          <div class="topic-card-wrap">
+            <a class="topic-card" href="#${topic.id}">
+              <span aria-hidden="true">${escapeHtml(topic.label.slice(0, 2))}</span>
+              <strong>${escapeHtml(topic.label)}</strong>
+              <small>${escapeHtml(topic.summary)}</small>
+            </a>
+            <button class="info-button" type="button" data-topic="${topic.id}" aria-label="Meer informatie over ${escapeHtml(topic.label)}">i</button>
+          </div>
+        `;
+      }
+
+      function detailCard(topic) {
+        return `
+          <article class="support-detail" id="${topic.id}">
+            <div class="detail-title">
+              <div class="detail-kicker">
+                <p class="label">${escapeHtml(topic.label)}</p>
+                <button class="info-button" type="button" data-topic="${topic.id}" aria-label="Meer informatie over ${escapeHtml(topic.label)}">i</button>
+              </div>
+              <h2>${escapeHtml(topic.title)}</h2>
+              <p>${escapeHtml(topic.summary)}</p>
+            </div>
+            <div class="detail-grid">
+              <div class="steps-panel">
+                <h3>Probeer dit veilig zelf</h3>
+                <ol>${topic.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}</ol>
+              </div>
+              <aside class="answer-panel">
+                <div>
+                  <h3>Waarschijnlijk</h3>
+                  <p>${escapeHtml(topic.causes)}</p>
+                </div>
+                <div class="warning-box">
+                  <h3>Stoppen wanneer</h3>
+                  <p>${escapeHtml(topic.warning)}</p>
+                </div>
+                <a href="tel:+31747850071">Vraag gratis diagnose</a>
+              </aside>
+            </div>
+          </article>
+        `;
+      }
+
+      function openDialog(topic) {
+        const dialog = document.createElement("dialog");
+        dialog.className = "info-dialog";
+        dialog.innerHTML = `
+          <form method="dialog" class="dialog-shell">
+            <div class="dialog-top">
+              <p class="label">${escapeHtml(topic.label)}</p>
+              <button class="dialog-close" type="submit" aria-label="Sluiten">x</button>
+            </div>
+            <h2>${escapeHtml(topic.title)}</h2>
+            <p class="dialog-summary">${escapeHtml(topic.summary)}</p>
+            <p>${escapeHtml(topic.explanation)}</p>
+            <div class="dialog-columns">
+              <section>
+                <h3>Extra controleren</h3>
+                <ul>${topic.checks.map((check) => `<li>${escapeHtml(check)}</li>`).join("")}</ul>
+              </section>
+              <section class="dialog-note">
+                <h3>Goed om te weten</h3>
+                <p>${escapeHtml(topic.note)}</p>
+                <h3>Let op</h3>
+                <p>${escapeHtml(topic.warning)}</p>
+              </section>
+            </div>
+            <div class="dialog-actions">
+              <a href="tel:+31747850071">Bel voor gratis diagnose</a>
+              <button type="submit">Terug naar overzicht</button>
+            </div>
+          </form>
+        `;
+        document.body.append(dialog);
+        dialog.addEventListener("close", () => dialog.remove());
+        dialog.addEventListener("click", (event) => {
+          if (event.target === dialog) {
+            dialog.close();
+          }
+        });
+        dialog.showModal();
+      }
+
+      document.querySelector("#topic-grid").innerHTML = topics.map(topicCard).join("");
+      document.querySelector("#detail-stack").innerHTML = topics.map(detailCard).join("");
+
+      document.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-topic]");
+        if (!button) return;
+        const topic = topics.find((item) => item.id === button.dataset.topic);
+        if (topic) openDialog(topic);
+      });
+    </script>
+  </body>
+</html>
