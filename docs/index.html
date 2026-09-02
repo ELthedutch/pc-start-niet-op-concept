@@ -72,8 +72,7 @@
       .topic-picker,
       .popular-band,
       .detail-stack,
-      .help-section,
-      .concept-section {
+      .help-section {
         width: min(1120px, calc(100% - 36px));
         margin: 0 auto;
       }
@@ -529,30 +528,6 @@
         margin-top: 28px;
       }
 
-      .concept-section {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 24px;
-        padding: 46px 0 72px;
-      }
-
-      .concept-section ul {
-        display: grid;
-        gap: 10px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .concept-section li {
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        background: #fff;
-        padding: 15px 16px;
-        color: #515154;
-        line-height: 1.5;
-      }
-
       .info-dialog {
         width: min(760px, calc(100% - 28px));
         max-height: min(760px, calc(100dvh - 28px));
@@ -658,7 +633,6 @@
         .support-nav,
         .popular-band,
         .detail-grid,
-        .concept-section,
         .dialog-columns {
           grid-template-columns: 1fr;
         }
@@ -764,12 +738,12 @@
           <h2>Snel naar veelvoorkomende situaties</h2>
         </div>
         <div class="popular-list">
-          <a href="#onderwerpen">Pc start niet op na stroomuitval</a>
-          <a href="#onderwerpen">Computer blijft hangen op Windows-logo</a>
-          <a href="#onderwerpen">Zwart scherm maar ventilatoren draaien</a>
-          <a href="#onderwerpen">Harde schijf tikt of klikt</a>
-          <a href="#onderwerpen">Pc piept bij opstarten</a>
-          <a href="#onderwerpen">Windows automatische reparatie blijft terugkomen</a>
+          <a href="#stroom">Pc start niet op na stroomuitval</a>
+          <a href="#windows">Computer blijft hangen op Windows-logo</a>
+          <a href="#beeld">Zwart scherm maar ventilatoren draaien</a>
+          <a href="#data">Harde schijf tikt of klikt</a>
+          <a href="#geluid">Pc piept bij opstarten</a>
+          <a href="#windows">Windows automatische reparatie blijft terugkomen</a>
         </div>
       </section>
 
@@ -804,18 +778,6 @@
           <a class="button button-secondary" href="https://wa.me/31683656077">WhatsApp</a>
           <a class="button button-muted" href="https://www.pcreparatietwente.nl/contact/">Contactpagina</a>
         </div>
-      </section>
-
-      <section class="concept-section">
-        <div>
-          <p class="label">Voor presentatie</p>
-          <h2>Waarom dit concept overzichtelijker voelt</h2>
-        </div>
-        <ul>
-          <li>Het lijkt op een support-hub: eerst zoeken of kiezen, daarna pas lezen.</li>
-          <li>De info-knoppen geven diepgang zonder de hoofdpagina druk te maken.</li>
-          <li>Bezoekers met haast krijgen direct duidelijke acties en waarschuwingen.</li>
-        </ul>
       </section>
     </main>
 
